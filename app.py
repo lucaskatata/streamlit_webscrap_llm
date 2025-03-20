@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 
 from decouple import config
 
@@ -31,7 +32,9 @@ if __name__ == '__main__':
     #     input='qual time está na primeira colocação do brasileirão na tabela do site https://ge.globo.com/futebol/brasileirao-serie-a/? E o último colocado?',
     # )
     result = agent_chain.invoke(
-        input='qual as maiores ofertas dessa página https://www.ecasahome.com.br/, retorne os dados no formato de uma tabela',
+        input='''Site: https://www.ecasahome.com.br/
+            Qual o item mais barato vendido? 
+        ''',
     )
 
     print(result.get('output'))
