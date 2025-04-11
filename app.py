@@ -11,6 +11,12 @@ from langchain_openai import ChatOpenAI
 
 os.environ['OPENAI_API_KEY'] = config('OPENAI_API_KEY')
 
+st.set_page_config(page_title='Web Scrap',
+                   layout='wide'
+                   )
+
+st.header('Web Scrap')
+
 if __name__ == '__main__':
     llm = ChatOpenAI(
         model='gpt-4o-mini',
@@ -31,10 +37,11 @@ if __name__ == '__main__':
     # result = agent_chain.invoke(
     #     input='qual time está na primeira colocação do brasileirão na tabela do site https://ge.globo.com/futebol/brasileirao-serie-a/? E o último colocado?',
     # )
+    
     result = agent_chain.invoke(
         input='''Site: https://www.ecasahome.com.br/
             Qual o item mais barato vendido? 
         ''',
     )
 
-    print(result.get('output'))
+    # print(result.get('output'))
