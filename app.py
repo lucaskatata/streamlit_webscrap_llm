@@ -20,7 +20,7 @@ if __name__ == "__main__":
     llm = ChatOpenAI(
         model="gpt-4o-mini",
         temperature=0,
-        api_key=secret_from_env("OPENAI_API_KEY"),
+        api_key=os.environ["OPENAI_API_KEY"],
     )
 
     browser = create_sync_playwright_browser()
