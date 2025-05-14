@@ -9,8 +9,8 @@ from langchain_community.tools.playwright.utils import create_sync_playwright_br
 from langchain_openai import ChatOpenAI
 
 
-os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
-# dotenv.load_dotenv(dotenv.find_dotenv())
+# os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
+dotenv.load_dotenv(dotenv.find_dotenv())
 
 st.set_page_config(page_title="Web Scrap", layout="wide")
 
